@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}News Website{% endblock %}</title>
+    <meta name="description=" content="{% block description %} En güncel haberlerin tek adresi {% endblock %}">
+    <meta name="keywords=" content="{% block keywords %} Haber ,son dakika , güncel haberler,{% endblock %}">
+    {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+    {% block head %} {% include('home/head.html.twig')%}   {% endblock %}
+
+
+
+</head>
+<body>
+
+{% block topbar %} {% include('home/topbar.html.twig')%}{% endblock %}
+{% block header %} {% include('home/header.html.twig')%}{% endblock %}
+{% block sliderbar %} {% endblock %}
+{% block sidebar %}  {% endblock %}
+{% block content %}
+
+{% endblock %}
+
+{% block footer %} {% include('home/footer.html.twig')%} {% endblock %}
+</body>
+</html>
