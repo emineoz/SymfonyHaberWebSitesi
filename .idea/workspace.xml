@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ca2113da-2947-446c-93c0-c88c41de2a8c" name="Changes" comment="" />
+    <list default="true" id="ca2113da-2947-446c-93c0-c88c41de2a8c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/templates/admin/home/footer.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/home/header.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/home/javascrips.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/home/sidebar.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/adminbase.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/home/topbar.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/topbar.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/homebase.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/homebase.html.twig" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,6 +20,9 @@
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -149,6 +162,7 @@
     </include_path>
   </component>
   <component name="ProjectId" id="2DhQCGT7XyyRVPSG5XaCmeiKbDX" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -158,13 +172,14 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/xampp/htdocs/haberwebsitesi/templates/admin/category",
+    "last_opened_file_path": "C:/xampp/htdocs/haberwebsitesi/templates/admin/home",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\haberwebsitesi\templates\admin\home" />
       <recent name="C:\xampp\htdocs\haberwebsitesi\templates\admin\category" />
     </key>
   </component>
@@ -183,12 +198,24 @@
       <option name="presentableId" value="Default" />
       <updated>1661148712179</updated>
       <workItem from="1661148730207" duration="605000" />
-      <workItem from="1661150449225" duration="25498000" />
+      <workItem from="1661150449225" duration="30376000" />
+      <workItem from="1661430126054" duration="11849000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
