@@ -1,0 +1,141 @@
+{% extends 'adminbase.html.twig' %}
+
+{% block title%} Edit Category Page {% endblock %}
+
+{% block content %}
+
+<div class="right_col" role="main">
+    <!-- Start content -->
+    <div class="content">
+        <div class="container">
+
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="page-title-box">
+                        <h4 class="page-title">Edit Category Page</h4>
+                        <ol class="breadcrumb p-0 m-0">
+                            <li>
+                                <a href="#">Admin/</a>
+                            </li>
+                            <li>
+                                <a href="#">Category/ </a>
+                            </li>
+                            <li class="active">
+                                Add Category
+                            </li>
+                        </ol>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- end row -->
+            <hr />
+
+
+
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <!---Success Message--->
+                                <?php if($msg){ ?>
+                                <div class="alert alert-success" role="alert">
+                                    <strong>Well done!</strong> <?php echo htmlentities($msg);?>
+                                </div>
+                                <?php } ?>
+
+                                <!---Error Message--->
+                                <?php if($error){ ?>
+                                <div class="alert alert-danger" role="alert">
+                                    <strong>Oh snap!</strong> <?php echo htmlentities($error);?></div>
+                                <?php } ?>
+
+
+                            </div>
+                        </div>
+
+
+
+
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <form action="{{ path('app_admin_category_update',{'id':rs.id}) }}" class="form-horizontal" name="category" method="post">
+                                    <div class="form-group" >
+                                        <label class="col-md-2 control-label" style="color:black;margin: 2px; " >Category <span class="required">*</span></label>
+                                        <div class="col-md-10">
+                                            <input type="text" class="form-control"  rows="2" name="category" value="{{ rs.category }}" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-md-2 control-label" style="color:black; margin: 2px;">Description <span class="required">*</span></label>
+                                        <div class="col-md-10">
+                                            <textarea class="form-control" rows="3" name="description" value="{{ rs.description }}" required></textarea>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-md-2 control-label" style="color:black;margin: 2px;">Posting Date  </label>
+                                        <div class="col-md-10">
+                                            <textarea class="form-control" rows="1" name="posting_date" value="{{ rs.postingdate }}" ></textarea>
+                                        </div>
+                                    </div>
+
+
+
+
+                                    <div class="form-group">
+                                        <label class="col-md-2 control-label" style="color:black; margin: 2px;">Slug </label>
+                                        <div class="col-md-10">
+                                            <textarea class="form-control"  name="slug" value="{{ rs.slug }}" ></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group ">
+                                        <label class="col-md-2 control-label" style="color:black; margin: 2px;">Status <span class="required">*</span></label>
+                                        <div class="col-md-10">
+                                            <select class="form-control"  name="status"  required>
+                                                <option selected> {{ rs.status }}</option>
+                                                <option>True</option>
+                                                <option>False</option>
+
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-md-2 control-label">&nbsp;</label>
+                                        <div class="col-md-10">
+
+                                            <button type="submit" class="btn btn-custom waves-effect waves-light btn-md" name="submit" style="background-color:#80bdff;margin-top: 12px">
+                                                Update
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                </form>
+                            </div>
+
+
+                        </div>
+
+
+
+
+
+
+
+
+
+
+
+                    </div>
+                </div>
+            </div>
+            <!-- end row -->
+
+
+        </div> <!-- container -->
+
+    </div> <!-- content -->
+</div>
+{% endblock %}

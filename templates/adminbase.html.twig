@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+    <script src="https://kit.fontawesome.com/823d4cda07.js" crossorigin="anonymous"></script>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <!-- Meta, title, CSS, favicons, etc. -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Admin Panel </title>
+   <title> {% block title%}Admin Panel {% endblock %}</title>
 
     <!-- Bootstrap -->
-    <link href="{{ asset('assets') }}/Admin/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('assets') }}/Admin/dist/css/bootstrap.min.css" >
     <!-- Font Awesome -->
-    <link href="{{ asset('assets') }}/Admin/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('assets') }}/Admin/css/font-awesome.min.css" >
     <!-- NProgress -->
     <link href="{{ asset('assets') }}/Admin/nprogress.css" rel="stylesheet">
     <!-- jQuery custom content scroller -->
@@ -20,19 +22,32 @@
 
     <!-- Custom Theme Style -->
     <link href="{{ asset('assets') }}/Admin/css/custom.min.css" rel="stylesheet">
+
+    {% block head %} {% endblock %}
 </head>
 
 <body class="nav-md">
+<div class="container body">
+    <div class="main_container">
 
 
-{% block header %} {% include('admin/home/header.html.twig')%}{% endblock %}
+
 
 {% block sidebar %} {% include('admin/home/sidebar.html.twig')%} {% endblock %}
+{% block header %} {% include('admin/home/header.html.twig')%} {% endblock %}
+
 {% block content %}
+    {% block body %}
+
+    {% endblock %}
 
 {% endblock %}
 
+
 {% block footer %} {% include('admin/home/footer.html.twig')%} {% endblock %}
-{% block javascrits %} {% include('admin/home/javascrips.html.twig')%} {% endblock %}
+
+    </div>
+</div>
+
 </body>
-</html>
+</html>>
