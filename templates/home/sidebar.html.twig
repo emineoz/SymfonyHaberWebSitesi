@@ -6,27 +6,32 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="section-title">
-                            <h4 class="m-0 text-uppercase font-weight-bold">Latest News</h4>
-                            <a class="text-secondary font-weight-medium text-decoration-none" href="">View All</a>
+                            <h4 class="m-0 text-uppercase font-weight-bold">Son Eklenenler</h4>
+                            <a class="text-secondary font-weight-medium text-decoration-none" href=""></a>
                         </div>
                     </div>
+
+                    {% for rs in lastdata %}
                     <div class="col-lg-6">
                         <div class="position-relative mb-3">
-                            <img class="img-fluid w-100" src="img/news-700x435-1.jpg" style="object-fit: cover;">
+                            <img class="img-fluid w-100" src="{{ asset('uploads/images/'~ rs.image) }}" style="object-fit: cover;">
                             <div class="bg-white border border-top-0 p-4">
-                                <div class="mb-2">
-                                    <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
-                                       href="">Business</a>
-                                    <a class="text-body" href=""><small>Jan 01, 2045</small></a>
-                                </div>
-                                <a class="h4 d-block mb-3 text-secondary text-uppercase font-weight-bold" href="">Lorem ipsum dolor sit amet elit...</a>
-                                <p class="m-0">Dolor lorem eos dolor duo et eirmod sea. Dolor sit magna
-                                    rebum clita rebum dolor stet amet justo</p>
+
+                                <a class="h4 d-block mb-3 text-secondary text-uppercase font-weight-bold" href="{{ path('app_product',{'id':rs.id}) }}">{{ rs.title }}</a>
+                                <p class="m-0">{{ rs.description }}</p>
                             </div>
                             <div class="d-flex justify-content-between bg-white border border-top-0 p-4">
                                 <div class="d-flex align-items-center">
-                                    <img class="rounded-circle mr-2" src="img/user.jpg" width="25" height="25" alt="">
-                                    <small>John Doe</small>
+                                    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                                        <img class="rounded-circle mr-2" src="{{ asset('assets') }}/Admin/admin.jpeg" width="25" height="25" alt="">
+                                        <small>Emine Öz</small>
+
+                                    {% else %}
+
+
+                                    {% endif %}
+
+
                                 </div>
                                 <div class="d-flex align-items-center">
                                     <small class="ml-3"><i class="far fa-eye mr-2"></i>12345</small>
@@ -35,89 +40,29 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-6">
-                        <div class="position-relative mb-3">
-                            <img class="img-fluid w-100" src="img/news-700x435-2.jpg" style="object-fit: cover;">
-                            <div class="bg-white border border-top-0 p-4">
-                                <div class="mb-2">
-                                    <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
-                                       href="">Business</a>
-                                    <a class="text-body" href=""><small>Jan 01, 2045</small></a>
-                                </div>
-                                <a class="h4 d-block mb-3 text-secondary text-uppercase font-weight-bold" href="">Lorem ipsum dolor sit amet elit...</a>
-                                <p class="m-0">Dolor lorem eos dolor duo et eirmod sea. Dolor sit magna
-                                    rebum clita rebum dolor stet amet justo</p>
-                            </div>
-                            <div class="d-flex justify-content-between bg-white border border-top-0 p-4">
-                                <div class="d-flex align-items-center">
-                                    <img class="rounded-circle mr-2" src="img/user.jpg" width="25" height="25" alt="">
-                                    <small>John Doe</small>
-                                </div>
-                                <div class="d-flex align-items-center">
-                                    <small class="ml-3"><i class="far fa-eye mr-2"></i>12345</small>
-                                    <small class="ml-3"><i class="far fa-comment mr-2"></i>123</small>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    {% endfor %}
+
                     <div class="col-lg-12 mb-3">
                         <a href=""><img class="img-fluid w-100" src="img/ads-728x90.png" alt=""></a>
                     </div>
+                    {% for rs in mindata %}
                     <div class="col-lg-6">
                         <div class="position-relative mb-3">
-                            <img class="img-fluid w-100" src="img/news-700x435-3.jpg" style="object-fit: cover;">
+                           <a href="{{ path('app_product',{'id':rs.id}) }}"></a> <img class="img-fluid w-100" src="{{ asset('uploads/images/'~ rs.image) }}" style="object-fit: cover;">
                             <div class="bg-white border border-top-0 p-4">
-                                <div class="mb-2">
-                                    <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
-                                       href="">Business</a>
-                                    <a class="text-body" href=""><small>Jan 01, 2045</small></a>
-                                </div>
-                                <a class="h4 d-block mb-0 text-secondary text-uppercase font-weight-bold" href="">Lorem ipsum dolor sit amet elit...</a>
+                                <a class="h4 d-block mb-0 text-secondary text-uppercase font-weight-bold" href="{{ path('app_product',{'id':rs.id}) }}"></a>
                             </div>
-                            <div class="d-flex justify-content-between bg-white border border-top-0 p-4">
-                                <div class="d-flex align-items-center">
-                                    <img class="rounded-circle mr-2" src="img/user.jpg" width="25" height="25" alt="">
-                                    <small>John Doe</small>
-                                </div>
-                                <div class="d-flex align-items-center">
-                                    <small class="ml-3"><i class="far fa-eye mr-2"></i>12345</small>
-                                    <small class="ml-3"><i class="far fa-comment mr-2"></i>123</small>
-                                </div>
-                            </div>
+
                         </div>
                     </div>
-                    <div class="col-lg-6">
-                        <div class="position-relative mb-3">
-                            <img class="img-fluid w-100" src="img/news-700x435-4.jpg" style="object-fit: cover;">
-                            <div class="bg-white border border-top-0 p-4">
-                                <div class="mb-2">
-                                    <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
-                                       href="">Business</a>
-                                    <a class="text-body" href=""><small>Jan 01, 2045</small></a>
-                                </div>
-                                <a class="h4 d-block mb-0 text-secondary text-uppercase font-weight-bold" href="">Lorem ipsum dolor sit amet elit...</a>
-                            </div>
-                            <div class="d-flex justify-content-between bg-white border border-top-0 p-4">
-                                <div class="d-flex align-items-center">
-                                    <img class="rounded-circle mr-2" src="img/user.jpg" width="25" height="25" alt="">
-                                    <small>John Doe</small>
-                                </div>
-                                <div class="d-flex align-items-center">
-                                    <small class="ml-3"><i class="far fa-eye mr-2"></i>12345</small>
-                                    <small class="ml-3"><i class="far fa-comment mr-2"></i>123</small>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    {% endfor %}
+
                     <div class="col-lg-6">
                         <div class="d-flex align-items-center bg-white mb-3" style="height: 110px;">
                             <img class="img-fluid" src="img/news-110x110-1.jpg" alt="">
                             <div class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
-                                <div class="mb-2">
-                                    <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href="">Business</a>
-                                    <a class="text-body" href=""><small>Jan 01, 2045</small></a>
-                                </div>
-                                <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="">Lorem ipsum dolor sit amet elit...</a>
+
+                                <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="">Hasta yakınından dayak yedi..</a>
                             </div>
                         </div>
                         <div class="d-flex align-items-center bg-white mb-3" style="height: 110px;">
@@ -156,35 +101,7 @@
                     <div class="col-lg-12 mb-3">
                         <a href=""><img class="img-fluid w-100" src="img/ads-728x90.png" alt=""></a>
                     </div>
-                    <div class="col-lg-12">
-                        <div class="row news-lg mx-0 mb-3">
-                            <div class="col-md-6 h-100 px-0">
-                                <img class="img-fluid h-100" src="img/news-700x435-5.jpg" style="object-fit: cover;">
-                            </div>
-                            <div class="col-md-6 d-flex flex-column border bg-white h-100 px-0">
-                                <div class="mt-auto p-4">
-                                    <div class="mb-2">
-                                        <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
-                                           href="">Business</a>
-                                        <a class="text-body" href=""><small>Jan 01, 2045</small></a>
-                                    </div>
-                                    <a class="h4 d-block mb-3 text-secondary text-uppercase font-weight-bold" href="">Lorem ipsum dolor sit amet elit...</a>
-                                    <p class="m-0">Dolor lorem eos dolor duo et eirmod sea. Dolor sit magna
-                                        rebum clita rebum dolor stet amet justo</p>
-                                </div>
-                                <div class="d-flex justify-content-between bg-white border-top mt-auto p-4">
-                                    <div class="d-flex align-items-center">
-                                        <img class="rounded-circle mr-2" src="img/user.jpg" width="25" height="25" alt="">
-                                        <small>John Doe</small>
-                                    </div>
-                                    <div class="d-flex align-items-center">
-                                        <small class="ml-3"><i class="far fa-eye mr-2"></i>12345</small>
-                                        <small class="ml-3"><i class="far fa-comment mr-2"></i>123</small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
                     <div class="col-lg-6">
                         <div class="d-flex align-items-center bg-white mb-3" style="height: 110px;">
                             <img class="img-fluid" src="img/news-110x110-1.jpg" alt="">
@@ -193,7 +110,7 @@
                                     <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href="">Business</a>
                                     <a class="text-body" href=""><small>Jan 01, 2045</small></a>
                                 </div>
-                                <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="">Lorem ipsum dolor sit amet elit...</a>
+                                <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="">Hasta yakınından dayak yedi</a>
                             </div>
                         </div>
                         <div class="d-flex align-items-center bg-white mb-3" style="height: 110px;">
@@ -233,105 +150,110 @@
             </div>
 
             <div class="col-lg-4">
-                <!-- Social Follow Start -->
-                <div class="mb-3">
-                    <div class="section-title mb-0">
-                        <h4 class="m-0 text-uppercase font-weight-bold">Follow Us</h4>
-                    </div>
-                    <div class="bg-white border border-top-0 p-3">
-                        <a href="" class="d-block w-100 text-white text-decoration-none mb-3" style="background: #39569E;">
-                            <i class="fab fa-facebook-f text-center py-4 mr-3" style="width: 65px; background: rgba(0, 0, 0, .2);"></i>
-                            <span class="font-weight-medium">12,345 Fans</span>
-                        </a>
-                        <a href="" class="d-block w-100 text-white text-decoration-none mb-3" style="background: #52AAF4;">
-                            <i class="fab fa-twitter text-center py-4 mr-3" style="width: 65px; background: rgba(0, 0, 0, .2);"></i>
-                            <span class="font-weight-medium">12,345 Followers</span>
-                        </a>
-                        <a href="" class="d-block w-100 text-white text-decoration-none mb-3" style="background: #0185AE;">
-                            <i class="fab fa-linkedin-in text-center py-4 mr-3" style="width: 65px; background: rgba(0, 0, 0, .2);"></i>
-                            <span class="font-weight-medium">12,345 Connects</span>
-                        </a>
-                        <a href="" class="d-block w-100 text-white text-decoration-none mb-3" style="background: #C8359D;">
-                            <i class="fab fa-instagram text-center py-4 mr-3" style="width: 65px; background: rgba(0, 0, 0, .2);"></i>
-                            <span class="font-weight-medium">12,345 Followers</span>
-                        </a>
-                        <a href="" class="d-block w-100 text-white text-decoration-none mb-3" style="background: #DC472E;">
-                            <i class="fab fa-youtube text-center py-4 mr-3" style="width: 65px; background: rgba(0, 0, 0, .2);"></i>
-                            <span class="font-weight-medium">12,345 Subscribers</span>
-                        </a>
-                        <a href="" class="d-block w-100 text-white text-decoration-none" style="background: #055570;">
-                            <i class="fab fa-vimeo-v text-center py-4 mr-3" style="width: 65px; background: rgba(0, 0, 0, .2);"></i>
-                            <span class="font-weight-medium">12,345 Followers</span>
-                        </a>
-                    </div>
-                </div>
-                <!-- Social Follow End -->
-
-                <!-- Ads Start -->
-                <div class="mb-3">
-                    <div class="section-title mb-0">
-                        <h4 class="m-0 text-uppercase font-weight-bold">Advertisement</h4>
-                    </div>
-                    <div class="bg-white text-center border border-top-0 p-3">
-                        <a href=""><img class="img-fluid" src="img/news-800x500-2.jpg" alt=""></a>
-                    </div>
-                </div>
-                <!-- Ads End -->
 
                 <!-- Popular News Start -->
                 <div class="mb-3">
                     <div class="section-title mb-0">
-                        <h4 class="m-0 text-uppercase font-weight-bold">Tranding News</h4>
+                        <h4 class="m-0 text-uppercase font-weight-bold">Yazarlar</h4>
+                    </div>
+                    <div class="bg-white border border-top-0 p-3">
+
+                        {% for rs in yazardata %}
+                        <div class="d-flex align-items-center bg-white mb-3" style="height: 110px;">
+
+                            <div class="w-100 h-110 px-3 d-flex flex-column justify-content-center border border-left-0">
+
+                                <img class="img-fluid" src="{{ asset('uploads/images/'~ rs.image) }}"  alt="" style="width: 180px;height: 100px;border-radius: 5px">
+                                <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="{{ path('app_product',{'id':rs.id}) }}">{{ rs.title }}</a>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <!-- Popular News End -->
+                <!-- Social Follow Start -->
+                <div class="mb-3">
+                    <div class="section-title mb-0">
+                        <h4 class="m-0 text-uppercase font-weight-bold">Vizör Haberi Keşfedin</h4>
+                    </div>
+                    <div class="bg-white border border-top-0 p-3">
+                        <a href="https://www.facebook.com/campaign/landing.php?&campaign_id=1603087355&extra_1=s%7Cc%7C305000809581%7Ce%7Cfacebook%20giri%C5%9F%7C&placement=&creative=305000809581&keyword=facebook%20giri%C5%9F&partner_id=googlesem&extra_2=campaignid%3D1603087355%26adgroupid%3D61834756558%26matchtype%3De%26network%3Dg%26source%3Dnotmobile%26search_or_content%3Ds%26device%3Dc%26devicemodel%3D%26adposition%3D%26target%3D%26targetid%3Dkwd-325251754076%26loc_physical_ms%3D1012769%26loc_interest_ms%3D%26feeditemid%3D%26param1%3D%26param2%3D&gclid=Cj0KCQjw6_CYBhDjARIsABnuSzqaOo_NZQo5bSLsgUVo4wy6Cr95x8Df1FNO_6qvx_PpcEtjbg1iuO4aAp13EALw_wcB" class="d-block w-100 text-white text-decoration-none mb-3" style="background: #39569E;">
+                            <i class="fab fa-facebook-f text-center py-4 mr-3" style="width: 65px; background: rgba(0, 0, 0, .2);"></i>
+                            <span class="font-weight-medium">Facebook</span>
+                        </a>
+                        <a href="https://twitter.com/i/flow/login?input_flow_data=%7B%22requested_variant%22%3A%22eyJsYW5nIjoidHIifQ%3D%3D%22%7D" class="d-block w-100 text-white text-decoration-none mb-3" style="background: #52AAF4;">
+                            <i class="fab fa-twitter text-center py-4 mr-3" style="width: 65px; background: rgba(0, 0, 0, .2);"></i>
+                            <span class="font-weight-medium">Twitter</span>
+                        </a>
+                        <a href="https://www.linkedin.com/" class="d-block w-100 text-white text-decoration-none mb-3" style="background: #0185AE;">
+                            <i class="fab fa-linkedin-in text-center py-4 mr-3" style="width: 65px; background: rgba(0, 0, 0, .2);"></i>
+                            <span class="font-weight-medium">Linkedin</span>
+                        </a>
+                        <a href="https://www.instagram.com/" class="d-block w-100 text-white text-decoration-none mb-3" style="background: #C8359D;">
+                            <i class="fab fa-instagram text-center py-4 mr-3" style="width: 65px; background: rgba(0, 0, 0, .2);"></i>
+                            <span class="font-weight-medium">İnstagram</span>
+                        </a>
+                        <a href="https://www.youtube.com/" class="d-block w-100 text-white text-decoration-none mb-3" style="background: #DC472E;">
+                            <i class="fab fa-youtube text-center py-4 mr-3" style="width: 65px; background: rgba(0, 0, 0, .2);"></i>
+                            <span class="font-weight-medium">Youtube</span>
+                        </a>
+
+                    </div>
+                </div>
+                <!-- Social Follow End -->
+
+
+
+                <!-- Popular News Start -->
+                <div class="mb-3">
+                    <div class="section-title mb-0">
+                        <h4 class="m-0 text-uppercase font-weight-bold">Yerel Haberler</h4>
                     </div>
                     <div class="bg-white border border-top-0 p-3">
                         <div class="d-flex align-items-center bg-white mb-3" style="height: 110px;">
                             <img class="img-fluid" src="img/news-110x110-1.jpg" alt="">
                             <div class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
                                 <div class="mb-2">
-                                    <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href="">Business</a>
-                                    <a class="text-body" href=""><small>Jan 01, 2045</small></a>
+                                    <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href="">İzmir</a>
+
                                 </div>
-                                <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="">Lorem ipsum dolor sit amet elit...</a>
+                                <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="">İzmir açıklarında 75 düzensiz göçmen yakalandı</a>
                             </div>
                         </div>
                         <div class="d-flex align-items-center bg-white mb-3" style="height: 110px;">
                             <img class="img-fluid" src="img/news-110x110-2.jpg" alt="">
                             <div class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
                                 <div class="mb-2">
-                                    <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href="">Business</a>
-                                    <a class="text-body" href=""><small>Jan 01, 2045</small></a>
+                                    <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href="">Manisa</a>
                                 </div>
-                                <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="">Lorem ipsum dolor sit amet elit...</a>
+                                <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="">Yıkılan duvarın altında kalan işçi öldü</a>
                             </div>
                         </div>
                         <div class="d-flex align-items-center bg-white mb-3" style="height: 110px;">
                             <img class="img-fluid" src="img/news-110x110-3.jpg" alt="">
                             <div class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
                                 <div class="mb-2">
-                                    <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href="">Business</a>
-                                    <a class="text-body" href=""><small>Jan 01, 2045</small></a>
+                                    <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href="">Balıkesir</a>
                                 </div>
-                                <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="">Lorem ipsum dolor sit amet elit...</a>
+                                <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="">Balıkesir'de yakalanan FETÖ firarisi eski yarbay tutuklandı</a>
                             </div>
                         </div>
                         <div class="d-flex align-items-center bg-white mb-3" style="height: 110px;">
                             <img class="img-fluid" src="img/news-110x110-4.jpg" alt="">
                             <div class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
                                 <div class="mb-2">
-                                    <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href="">Business</a>
-                                    <a class="text-body" href=""><small>Jan 01, 2045</small></a>
+                                    <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href="">İzmir</a>
                                 </div>
-                                <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="">Lorem ipsum dolor sit amet elit...</a>
+                                <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="">İzmir'de kurtuluşun 100'üncü yılına coşkulu kutlama</a>
                             </div>
                         </div>
                         <div class="d-flex align-items-center bg-white mb-3" style="height: 110px;">
                             <img class="img-fluid" src="img/news-110x110-5.jpg" alt="">
                             <div class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
                                 <div class="mb-2">
-                                    <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href="">Business</a>
-                                    <a class="text-body" href=""><small>Jan 01, 2045</small></a>
+                                    <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href="">Ankara</a>
                                 </div>
-                                <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="">Lorem ipsum dolor sit amet elit...</a>
+                                <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="">CHP'nin kuruluşunun 99. yıl dönümü Beypazarı'nda kutlandı</a>
                             </div>
                         </div>
                     </div>
@@ -341,17 +263,18 @@
                 <!-- Newsletter Start -->
                 <div class="mb-3">
                     <div class="section-title mb-0">
-                        <h4 class="m-0 text-uppercase font-weight-bold">Newsletter</h4>
+                        <img style="width:180px; height:40px; font-size: 65px" src="/assets/img/icon.jpeg" style="height: 75px;font-size: 1em;margin-right: 2px"  srcset="/assets/dffed3f4.png 2x">
+
                     </div>
                     <div class="bg-white text-center border border-top-0 p-3">
-                        <p>Aliqu justo et labore at eirmod justo sea erat diam dolor diam vero kasd</p>
+                        <p>Günün manşetlerini ve en çok okunan haberleri her sabah e-postanızdan takip etmek için Vizör habere üye olun.</p>
                         <div class="input-group mb-2" style="width: 100%;">
-                            <input type="text" class="form-control form-control-lg" placeholder="Your Email">
+                            <input type="text" class="form-control form-control-lg" placeholder="Email">
                             <div class="input-group-append">
-                                <button class="btn btn-primary font-weight-bold px-3">Sign Up</button>
+                                <button class="btn btn-primary font-weight-bold px-3">Üye ol</button>
                             </div>
                         </div>
-                        <small>Lorem ipsum dolor sit amet elit</small>
+                        <small>Teşekkürler!</small>
                     </div>
                 </div>
                 <!-- Newsletter End -->
@@ -359,20 +282,19 @@
                 <!-- Tags Start -->
                 <div class="mb-3">
                     <div class="section-title mb-0">
-                        <h4 class="m-0 text-uppercase font-weight-bold">Tags</h4>
+
                     </div>
                     <div class="bg-white border border-top-0 p-3">
                         <div class="d-flex flex-wrap m-n1">
-                            <a href="" class="btn btn-sm btn-outline-secondary m-1">Politics</a>
-                            <a href="" class="btn btn-sm btn-outline-secondary m-1">Business</a>
-                            <a href="" class="btn btn-sm btn-outline-secondary m-1">Corporate</a>
-                            <a href="" class="btn btn-sm btn-outline-secondary m-1">Business</a>
-                            <a href="" class="btn btn-sm btn-outline-secondary m-1">Health</a>
-                            <a href="" class="btn btn-sm btn-outline-secondary m-1">Education</a>
-                            <a href="" class="btn btn-sm btn-outline-secondary m-1">Science</a>
-                            <a href="" class="btn btn-sm btn-outline-secondary m-1">Business</a>
-                            <a href="" class="btn btn-sm btn-outline-secondary m-1">Foods</a>
-                            <a href="" class="btn btn-sm btn-outline-secondary m-1">Travel</a>
+                            <a href="" class="btn btn-sm btn-outline-secondary m-1">Gündem</a>
+                            <a href="" class="btn btn-sm btn-outline-secondary m-1">Ekonomi</a>
+                            <a href="" class="btn btn-sm btn-outline-secondary m-1">Dünya</a>
+                            <a href="" class="btn btn-sm btn-outline-secondary m-1">Spor</a>
+                            <a href="" class="btn btn-sm btn-outline-secondary m-1">Teknoloji</a>
+                            <a href="" class="btn btn-sm btn-outline-secondary m-1">Magazin</a>
+                            <a href="" class="btn btn-sm btn-outline-secondary m-1">Sağlık</a>
+                            <a href="" class="btn btn-sm btn-outline-secondary m-1">İletişim</a>
+                            <a href="" class="btn btn-sm btn-outline-secondary m-1">Hakkımızda</a>
                         </div>
                     </div>
                 </div>

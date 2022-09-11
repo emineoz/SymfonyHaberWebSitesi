@@ -6,6 +6,8 @@
     <title>{% block title %}News Website{% endblock %}</title>
     <meta name="description=" content="{% block description %} En güncel haberlerin tek adresi {% endblock %}">
     <meta name="keywords=" content="{% block keywords %} Haber ,son dakika , güncel haberler,{% endblock %}">
+    <link rel = "icon" href =
+
     {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
     {% block head %} {% include('home/head.html.twig')%}   {% endblock %}
 
@@ -22,19 +24,41 @@
 
 {% endblock %}
 
-{% block footer %} {% include('home/footer.html.twig')%} {% endblock %}
-<!-- jQuery -->
-<script src="../vendors/jquery/dist/jquery.min.js"></script>
-<!-- Bootstrap -->
-<script src="../vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-<!-- FastClick -->
-<script src="../vendors/fastclick/lib/fastclick.js"></script>
-<!-- NProgress -->
-<script src="../vendors/nprogress/nprogress.js"></script>
-<!-- jQuery custom content scroller -->
-<script src="../vendors/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+{% block body %}
 
-<!-- Custom Theme Scripts -->
-<script src="../build/js/custom.min.js"></script>
+{% endblock %}
+
+{% block footer %} {% include('home/footer.html.twig')%} {% endblock %}
+
+<!-- JavaScript Libraries -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+<script src="{{ asset('assets') }}/js/easing.min.js"></script>
+
+<script src="{{ asset('assets') }}/js/owl.carousel.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+<script>
+    function addDarkmodeWidget() {
+        new Darkmode().showWidget();
+    }
+    window.addEventListener('load', addDarkmodeWidget);
+    var options = {
+        bottom: '764px', // default: '32px'
+        right: '66px', // default: '32px'
+        left: '32px', // default: 'unset'
+        time: '0.5s', // default: '0.3s'
+        mixColor: '#fff', // default: '#fff'
+        backgroundColor: '#fff',  // default: '#fff'
+        buttonColorDark: '#100f2c',  // default: '#100f2c'
+        buttonColorLight: '#fff', // default: '#fff'
+        saveInCookies: false, // default: true,
+        label: '🌓', // default: ''
+        autoMatchOsTheme: true // default: true
+    }
+</script>
+
+<!-- Template Javascript -->
+<script src="{{ asset('assets') }}/js/main.js"></script>
+
 </body>
 </html>
