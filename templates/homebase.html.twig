@@ -3,7 +3,7 @@
 <head>
     <script src="https://kit.fontawesome.com/823d4cda07.js" crossorigin="anonymous"></script>
     <meta charset="UTF-8">
-    <title>{% block title %}News Website{% endblock %}</title>
+    <title>{% block title %}{{ setting.title }}{% endblock %}</title>
     <meta name="description=" content="{% block description %} En güncel haberlerin tek adresi {% endblock %}">
     <meta name="keywords=" content="{% block keywords %} Haber ,son dakika , güncel haberler,{% endblock %}">
     <link rel = "icon" href =
@@ -62,3 +62,11 @@
 
 </body>
 </html>
+
+
+}}
+
+
+		else{
+			echo "Name Does not exist";
+		}

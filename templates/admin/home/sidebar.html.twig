@@ -10,7 +10,7 @@
         <div class="profile clearfix">
             <div class="profile_pic">
 
-                <img src="{{ asset('assets') }}/Admin/WhatsApp Image 2022-08-29 at 21.48.34.jpeg" alt="..." class="img-circle profile_img">
+                <img src="{{ asset('assets') }}/Admin/admin.jpeg" alt="..." class="img-circle profile_img">
             </div>
             <div class="profile_info">
                 <span>Welcome,</span>
@@ -27,13 +27,8 @@
                 <h3>General</h3>
                 <ul class="nav side-menu">
                     <li><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
-                        <ul class="nav child_menu">
-                            <li><a href="index.html">Dashboard</a></li>
-                            <li><a href="index2.html">Dashboard2</a></li>
-                            <li><a href="index3.html">Dashboard3</a></li>
-                        </ul>
                     </li>
-                    <li><a><i class="fa fa-edit"></i> Category <span class="fa fa-chevron-down"></span></a>
+                    <li><a ><i class="fa fa-edit"></i>  <span class="fa fa-chevron-down"></span>Category</a>
                         <ul class="nav child_menu">
                             <li><a href="/admin/category/add">Add Category</a></li>
                             <li><a href="/admin/category/manage">Manage Category</a></li>
@@ -42,7 +37,6 @@
                         <ul class="nav child_menu">
                             <li><a href="{{ path('app_admin_product_new') }}">Add Post</a></li>
                             <li><a href="{{ path('app_admin_product_index') }}">Manage Post</a></li>
-                            <li><a href="form_advanced.html">Trash Post</a></li>
                         </ul>
                     </li>
                     <li><a><i class="fa fa-edit"></i> Contact <span class="fa fa-chevron-down"></span></a>
@@ -51,17 +45,9 @@
 
                         </ul>
                     </li>
-                    <li><a><i class="fa fa-desktop"></i> UI Elements <span class="fa fa-chevron-down"></span></a>
+                    <li><a><i class="fa fa-desktop"></i>Settings<span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
-                            <li><a href="general_elements.html">General Elements</a></li>
-                            <li><a href="media_gallery.html">Media Gallery</a></li>
-                            <li><a href="typography.html">Typography</a></li>
-                            <li><a href="icons.html">Icons</a></li>
-                            <li><a href="glyphicons.html">Glyphicons</a></li>
-                            <li><a href="widgets.html">Widgets</a></li>
-                            <li><a href="invoice.html">Invoice</a></li>
-                            <li><a href="inbox.html">Inbox</a></li>
-                            <li><a href="calendar.html">Calendar</a></li>
+                            <li><a href="{{ path('app_admin_setting_index') }}">General Settings</a></li>
                         </ul>
                     </li>
                     <li><a><i class="fa fa-table"></i> Tables <span class="fa fa-chevron-down"></span></a>

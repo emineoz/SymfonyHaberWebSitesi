@@ -1,0 +1,68 @@
+{% extends 'adminbase.html.twig' %}
+
+{% block title %}Edit Product{% endblock %}
+
+{% block body %}
+    <div class="right_col" role="main">
+        <!-- Start content -->
+        <div class="content">
+            <div class="container">
+
+
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="page-title-box">
+                            <h4 class="page-title">Manage Categories</h4>
+                            <ol class="breadcrumb p-0 m-0">
+                                <li>
+                                    <a href="#">Admin</a>
+                                </li>
+                                <li>
+                                    <a href="#">Category </a>
+                                </li>
+                                <li class="active">
+                                    Manage Categories
+                                </li>
+                            </ol>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end row -->
+                <!-- end row -->
+                <hr />
+
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="card-box">
+                            <h4 class="m-t-0 header-title"><b>Category List </b></h4>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- end row -->
+
+                <div class="x_content">
+
+                    <div class="table-responsive">
+
+                    </div>
+
+                    {{ include('admin/product/_form.html.twig', {'button_label': 'Update'}) }}
+
+
+                    <a href="{{ path('app_admin_product_index') }}" class="btn btn-secondary"  >Back to List</a>
+
+                    {{ include('admin/product/_delete_form.html.twig') }}
+                </div>
+            </div>
+        </div>
+
+    </div> <!-- container -->
+
+    </div> <!-- content -->
+    </div>
+
+
+    </div>
+{% endblock %}

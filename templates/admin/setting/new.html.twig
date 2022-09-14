@@ -1,0 +1,48 @@
+{% extends 'adminbase.html.twig' %}
+
+{% block title %}Product index{% endblock %}
+
+{% block head %}
+    <SCRIPT language="JavaScript" type="text/javascript">
+        function openWin( windowURL, windowName, windowFeatures ) { window.open( windowURL, windowName, windowFeatures ) ; 	}
+    </SCRIPT>
+
+{% endblock %}
+
+{% block body %}
+<div class="right_col" role="main">
+    <div class="content">
+        <div class="container">
+
+
+            <!-- end row -->
+
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="card-box">
+                        <h5 class="m-t-0 header-title" style=""><b>Product List </b></h5>
+
+                        <a href="{{ path('app_admin_product_new') }}" class="btn btn-secondary" style="margin-left:1130px">Create new </a>
+
+                    </div>
+                </div>
+            </div>
+            <!-- end row -->
+
+    {{ include('admin/setting/_form.html.twig') }}
+
+    <a href="{{ path('app_admin_setting_index') }}">back to list</a>
+</div>
+</div>
+</div>
+
+    </div>
+    </div>
+    </div>
+
+    </div> <!-- container -->
+
+    </div> <!-- content -->
+    </div>
+{% endblock %}

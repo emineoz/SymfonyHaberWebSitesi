@@ -1,0 +1,96 @@
+{% extends 'adminbase.html.twig' %}
+
+{% block title %}Settings Page{% endblock %}
+
+{% block head %}
+    <SCRIPT language="JavaScript" type="text/javascript">
+        function openWin( windowURL, windowName, windowFeatures ) { window.open( windowURL, windowName, windowFeatures ) ; 	}
+    </SCRIPT>
+
+{% endblock %}
+
+{% block body %}
+    <div class="right_col" role="main">
+        <div class="content">
+            <div class="container">
+
+
+                <!-- end row -->
+
+
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="card-box">
+                            <h5 class="m-t-0 header-title" style=""><b>Settings List </b></h5>
+
+
+
+                        </div>
+                    </div>
+                </div>
+                <!-- end row -->
+
+                <div class="x_content">
+
+                <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Keywords</th>
+                <th>Description</th>
+                <th>Company</th>
+                <th>Adress</th>
+                <th>Phone</th>
+                <th>Fax</th>
+                <th>Email</th>
+                <th>Status</th>
+
+            </tr>
+        </thead>
+        <tbody>
+        {% for setting in settings %}
+            <tr>
+                <td>{{ setting.id }}</td>
+                <td>{{ setting.title }}</td>
+                <td>{{ setting.keywords }}</td>
+                <td>{{ setting.description }}</td>
+                <td>{{ setting.company }}</td>
+                <td>{{ setting.adress }}</td>
+                <td>{{ setting.phone }}</td>
+                <td>{{ setting.fax }}</td>
+                <td>{{ setting.email }}</td>
+
+                <td>{{ setting.status }}</td>
+                <td>
+                    <a href="{{ path('app_admin_setting_edit', {'id': setting.id}) }}" class="btn btn-success">Edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="23">
+
+                    <a href="{{ path('app_admin_setting_new') }}" class="btn btn-success">Create new </a>
+                </td>
+
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+        </div>
+    </div>
+</div>
+
+
+
+    </div>
+    </div>
+    </div>
+
+    </div> <!-- container -->
+
+    </div> <!-- content -->
+    </div>
+{% endblock %}

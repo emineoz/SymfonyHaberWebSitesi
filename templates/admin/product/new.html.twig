@@ -1,0 +1,45 @@
+{% extends 'adminbase.html.twig' %}
+
+{% block title %}New Product{% endblock %}
+
+{% block body %}
+    <div class="right_col" role="main">
+    <div class="content">
+<div class="container">
+
+
+
+        <div class="col-xs-12">
+        </div>
+    <!-- end row -->
+    <!-- end row -->
+
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card-box">
+                <h4 class="m-t-0 header-title"><b>New Product </b></h4>
+
+            </div>
+            <hr />
+        </div>
+    </div>
+    <!-- end row -->
+
+    <div class="x_content">
+
+    {{ include('admin/product/_form.html.twig') }}
+
+        <a href="{{ path('app_admin_product_index') }}" class="btn btn-secondary"  >Back to List</a>
+    </div>
+
+
+</div>
+    </div>
+    </div>
+
+    </div> <!-- container -->
+
+    </div> <!-- content -->
+    </div>
+{% endblock %}

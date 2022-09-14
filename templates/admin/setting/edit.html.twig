@@ -1,0 +1,43 @@
+{% extends 'adminbase.html.twig' %}
+
+{% block title %}Product index{% endblock %}
+
+{% block body %}
+<div class="right_col" role="main">
+    <div class="content">
+        <div class="container">
+
+
+            <!-- end row -->
+            <div class="x_content">
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="card-box">
+                        <h5 class="m-t-0 header-title" style=""><b>Product List </b></h5>
+
+
+                    </div>
+                </div>
+            </div>
+            <!-- end row -->
+
+      {{ include('admin/setting/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_admin_setting_index') }}" class="btn btn-success">back to list</a>
+
+
+        </div>
+    </div>
+</div>
+
+
+    </div>
+    </div>
+    </div>
+
+    </div> <!-- container -->
+
+    </div> <!-- content -->
+    </div>
+{% endblock %}

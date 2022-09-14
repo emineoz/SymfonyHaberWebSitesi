@@ -1,0 +1,118 @@
+{% extends 'adminbase.html.twig' %}
+
+{% block title %}Product index{% endblock %}
+
+{% block head %}
+    <SCRIPT language="JavaScript" type="text/javascript">
+        function openWin( windowURL, windowName, windowFeatures ) { window.open( windowURL, windowName, windowFeatures ) ; 	}
+    </SCRIPT>
+
+{% endblock %}
+
+{% block body %}
+<div class="right_col" role="main">
+    <div class="content">
+        <div class="container">
+
+
+            <!-- end row -->
+
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="card-box">
+                        <h5 class="m-t-0 header-title" style=""><b>Product List </b></h5>
+
+                        <a href="{{ path('app_admin_product_new') }}" class="btn btn-secondary" style="margin-left:1130px">Create new </a>
+
+                    </div>
+                </div>
+            </div>
+            <!-- end row -->
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ setting.id }}</td>
+            </tr>
+            <tr>
+                <th>Title</th>
+                <td>{{ setting.title }}</td>
+            </tr>
+            <tr>
+                <th>Keywords</th>
+                <td>{{ setting.keywords }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ setting.description }}</td>
+            </tr>
+            <tr>
+                <th>Company</th>
+                <td>{{ setting.company }}</td>
+            </tr>
+            <tr>
+                <th>Adress</th>
+                <td>{{ setting.adress }}</td>
+            </tr>
+            <tr>
+                <th>Phone</th>
+                <td>{{ setting.phone }}</td>
+            </tr>
+            <tr>
+                <th>Fax</th>
+                <td>{{ setting.fax }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ setting.email }}</td>
+            </tr>
+            <tr>
+                <th>Smtpserver</th>
+                <td>{{ setting.smtpserver }}</td>
+            </tr>
+            <tr>
+                <th>Smtpemail</th>
+                <td>{{ setting.smtpemail }}</td>
+            </tr>
+            <tr>
+                <th>Smtppassword</th>
+                <td>{{ setting.smtppassword }}</td>
+            </tr>
+            <tr>
+                <th>Smtpport</th>
+                <td>{{ setting.smtpport }}</td>
+            </tr>
+            <tr>
+                <th>Aboutus</th>
+                <td>{{ setting.aboutus }}</td>
+            </tr>
+            <tr>
+                <th>Contact</th>
+                <td>{{ setting.contact }}</td>
+            </tr>
+            <tr>
+                <th>Status</th>
+                <td>{{ setting.status }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_admin_setting_index') }}">back to list</a>
+
+    <a href="{{ path('app_admin_setting_edit', {'id': setting.id}) }}">edit</a>
+
+    {{ include('admin/setting/_delete_form.html.twig') }}
+        </div>
+    </div>
+</div>
+
+    </div>
+    </div>
+    </div>
+
+    </div> <!-- container -->
+
+    </div> <!-- content -->
+    </div>
+{% endblock %}

@@ -2,12 +2,15 @@
 
 namespace App\Controller;
 
+use App\Controller\Admin\SettingController;
 use App\Entity\Messages;
 use App\Form\MessagesType;
 use App\Repository\MessagesRepository;
 use App\Repository\ProductRepository;
+use App\Repository\SettingRepository;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -15,10 +18,13 @@ use Symfony\Component\Routing\Annotation\Route;
 class HomeController extends AbstractController
 {
     #[Route('/home', name: 'app_home')]
-    public function index(ManagerRegistry $doctrine,ProductRepository $productRepository): Response
+    public function index(ManagerRegistry $doctrine,ProductRepository $productRepository,SettingRepository $settingRepository): Response
     {
 
-       // $sliderdata=$productRepository->findAll(3);
+        $setting=$settingRepository->find(1);
+
+
+
         $entityManager=$doctrine->getManager();
         $query1=$entityManager->createQuery(
             'SELECT p
@@ -69,15 +75,25 @@ class HomeController extends AbstractController
         );
         $yazardata=$query_2->getResult();
 
+        $query_3=$entityManager->createQuery(
+            'SELECT p
+             FROM App\Entity\Product p
+             WHERE p.id BETWEEN 26 and 31'
+
+        );
+        $textdata=$query_3->getResult();
+
 
         return $this->render('home/index.html.twig', [
             'controller_name' => 'HomeController',
             'sliderdata'=>$sliderdata,
             'data'=>$data,
-             'featuredata'=>$featuredata,
-                'lastdata'=>$lastdata,
+            'featuredata'=>$featuredata,
+            'lastdata'=>$lastdata,
             'mindata'=>$mindata,
-            'yazardata'=>$yazardata
+            'yazardata'=>$yazardata,
+            'setting'=>$setting,
+            'textdata'=> $textdata
         ]);
 
     }
@@ -104,10 +120,11 @@ class HomeController extends AbstractController
             ]);
         }
     #[Route('/aboutus', name: 'app_aboutus')]
-    public function aboutus(): Response
+    public function aboutus(SettingRepository $settingRepository): Response
     {
+        $setting=$settingRepository->find(1);
         return $this->render('home/aboutus.html.twig', [
-            'controller_name' => 'HomeController',
+           'setting'=>$setting,
         ]);
     }
 
@@ -120,5 +137,33 @@ class HomeController extends AbstractController
             'product'=>$product
         ]);
     }
+
+    #[Route('/accesdenied', name: 'app_accesdenied')]
+    public function accesdenied(SettingRepository $settingRepository): Response
+    {
+
+        $setting=$settingRepository->find(1);
+        return $this->renderForm('home/accesdenied.html.twig', [
+            'setting'=>$setting,
+        ]);
+    }
+
+    #[Route('search-product', name: 'search_product')]
+    public function searchProduct(Request $request)
+    {
+        $searchForm = $this->createForm(SearchProductType::class);
+        $searchForm->handleRequest($request);
+
+        if ($searchForm->isSubmitted() && $searchForm->isValid()) {
+
+            dump('Form submitted');
+        }
+        return $this->render('components/search-input.html.twig', [
+            'searchForm' => $searchForm->createView()
+        ]);
+    }
+
+
+
 }
 
