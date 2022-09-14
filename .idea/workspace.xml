@@ -1,26 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ca2113da-2947-446c-93c0-c88c41de2a8c" name="Changes" comment="third Commit">
-      <change afterPath="$PROJECT_DIR$/templates/home/product.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/haberwebsitesi.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/haberwebsitesi.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+    <list default="true" id="ca2113da-2947-446c-93c0-c88c41de2a8c" name="Changes" comment="fourth commit">
+      <change afterPath="$PROJECT_DIR$/templates/home/accesdenied.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/home/searchbar.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/security/admin_login.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home/contact.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/contact.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/category/add.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/category/add.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/category/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/category/edit.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/category/manage.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/category/manage.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/home/contactmessage.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/home/contactmessage.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/home/header.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/home/header.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/home/message_show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/home/message_show.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/home/sidebar.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/home/sidebar.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/home/footer.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/footer.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home/head.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/head.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/home/header.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/header.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/home/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home/javascript.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/javascript.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/home/sidebar.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/sidebar.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home/sliderbar.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/sliderbar.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/home/topbar.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/topbar.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/homebase.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/homebase.html.twig" afterDir="false" />
     </list>
@@ -231,7 +229,10 @@
       <workItem from="1661935136487" duration="14109000" />
       <workItem from="1662024549484" duration="53486000" />
       <workItem from="1662452755317" duration="42402000" />
-      <workItem from="1662587114269" duration="73763000" />
+      <workItem from="1662587114269" duration="74528000" />
+      <workItem from="1662855763636" duration="46000" />
+      <workItem from="1662899985452" duration="18766000" />
+      <workItem from="1663015515641" duration="30588000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit">
       <created>1661527588549</created>
@@ -254,7 +255,14 @@
       <option name="project" value="LOCAL" />
       <updated>1662465248931</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="fourth commit">
+      <created>1662854993713</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1662854993713</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -275,7 +283,8 @@
     <MESSAGE value="First Commit" />
     <MESSAGE value="second Commit" />
     <MESSAGE value="third Commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="third Commit" />
+    <MESSAGE value="fourth commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="fourth commit" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -287,7 +296,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/templates/home/contact2.html.twig</url>
-          <line>88</line>
+          <line>87</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">

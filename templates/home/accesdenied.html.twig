@@ -1,0 +1,21 @@
+{% extends 'homebase.html.twig' %}
+
+{% block title %} {{ setting.title}} {% endblock %}
+
+
+
+
+{% block content %}
+    <div class="container-fluid mt-5 pt-3">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+    <h1> Yetki Hatası</h1><br>
+     Yetkiniz bulunmamaktadır lütfen farklı kullanıcı ile tekrar deneyiniz <br>
+     <a href="{{ path('app_login') }}" class="btn btn-success">Login Ol</a>
+
+</div>
+</div>
+</div>
+    </div>
+{% endblock %}

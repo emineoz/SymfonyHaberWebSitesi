@@ -16,34 +16,40 @@
                 <a href="single.html" class="nav-item nav-link">Sağlık</a>
                 <a href='/contact' class="nav-item nav-link">İletişim</a>
                 <a href='/aboutus' class="nav-item nav-link">Hakkımızda</a>
-                <li class="input-group ml-auto d-none d-lg-flex" style=" margin-right:4px;">
-                    <div class="nav-item dropdown" style="margin-left: 410px">
+
+
+
+
+
+                    <div class="nav-item dropdown" style="margin-left: 200px;margin-top: 10px">
                         {% if is_granted('IS_AUTHENTICATED_FULLY') %}
 
-                        <a href="{{ path('app_logout') }}"> <img class="class=”rounded-circle"  src="/assets/img/admin.jpeg"style=";width: 52px;border-radius:80%"></a>
 
-
+                         <a href="{{ path('app_logout') }} "><strong class="text-lowercase" style="margin-left: 5px;margin-top: 5px">{{ app.user.email }}</strong></a>
+                      </div>
 
 
                               {% else %}
-                                  <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Giriş</a>
+                                  <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" >Giriş</a>
 
                             {% endif %}
                         <div class="dropdown-menu rounded-0 m-0">
                              <a href="{{ path('app_login') }}" class="dropdown-item">Giriş Yap</a>
 
 
-                            <a href="{{ path('app_logout') }} "class="dropdown-item">Çıkış Yap</a>
+                            <a href="{{ path('app_register') }} "class="dropdown-item">Üye ol</a>
 
                         </div>
                     </div>
 
-                    <div class="input-group-append" style="margin-left: 10px"  >
-                        <button class="input-group-text bg-primary text-dark border-0 px-3"><i
-                                    class="fa fa-search"></i></button>
 
-                    </div>
 
+            <div class="input-group rounded" style="width: 200px;margin:11px;height: 15px;">
+                <input type="search" class="form-control rounded" placeholder="Ara" aria-label="Search" aria-describedby="search-addon" />
+                <span class="input-group-text border-0" id="search-addon">
+    <i class="fas fa-search"></i>
+  </span>
+            </div>
 
                 </li>
 
@@ -105,7 +111,8 @@
                 </style>
             </div>
 
-        </div>
+
     </nav>
 </div>
+
 <!-- Navbar End -->
